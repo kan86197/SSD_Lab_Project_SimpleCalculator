@@ -5,6 +5,17 @@ package com.example.hpenvy800.simplecalculator;
  */
 
 public class MainPresenter {
-    MainActivity main = new MainActivity();
-    
+    MainActivity activity;
+
+    public MainPresenter(MainActivity activity){
+        this.activity = activity;
+    }
+
+    public void numberPress(int numPressed){
+        if (activity.display.getText().equals("")){
+            activity.display.setText(numPressed);
+        }   else{
+            activity.display.append(Integer.toString(numPressed));
+        }
+    }
 }
